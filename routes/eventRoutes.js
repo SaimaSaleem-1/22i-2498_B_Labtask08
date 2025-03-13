@@ -1,3 +1,7 @@
+MONGODB_URI="mongodb://localhost:27017/event-planner"
+PORT="5000"
+JWT_SECRET="saimasaleem"
+
 const express = require('express');
 const Event = require('../models/eventModel');
 const verifyToken = require('../middleware/verifyToken');

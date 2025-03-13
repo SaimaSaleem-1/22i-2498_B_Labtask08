@@ -1,3 +1,6 @@
+MONGODB_URI="mongodb://localhost:27017/event-planner"
+PORT="5000"
+JWT_SECRET="saimasaleem"
 const jwt = require('jsonwebtoken');
 
 const verifyToken = (req, res, next) => {
@@ -7,7 +10,7 @@ const verifyToken = (req, res, next) => {
     return res.status(403).json({ message: 'No token provided' });
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
